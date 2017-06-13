@@ -1,0 +1,56 @@
+ECMA Script6 --released in 2015
+
+JavaScript is nothing but ECMA script
+
+current version is ES5
+
+
+
+
+
+
+
+
+First we have to open the folder where we want to do our node project.
+
+In order to do that create a folder
+type cd and paste the path of the folder
+npm init--> this will install all the node packages.
+
+npm install --save-dev babel-core babel-loader babel-preset-es2015    ---> This will install the dev dependencies (npm install is used to download the libraries)
+
+
+create a file called webpack.config.js under node_modules folder. The file should contain the following:
+
+module.exports = {
+	entry : '/main.js', // we write the code here (ES6 or ECMA Script 2015)
+	output : {
+	path : './',   //This means the output should be in the same folder
+	filename : 'index.js'(ES5)
+},
+devServer : {
+	inline: true,  // if there are file changes, rebuild and re-render everything
+	port : 3333   //server will run at port no 3333
+},
+module : {
+		loaders : [
+		{
+			test : /.js$/,  //convert them 
+			exclude : /node_modules/,  // you dont have to convert  node_modules
+			loader : 'babel-loader',   // babel-loader use for compilation ES6
+			query : {
+			presets : ['es2015']
+		}
+     }
+]
+}
+}
+
+
+
+
+rest operator--> combining all parameters into 1 array
+
+spread operator--> used to call a function
+				   splitting an array into parameters
+				   ex:
